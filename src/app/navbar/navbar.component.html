@@ -1,0 +1,42 @@
+<section id="sec1">
+  <div class="container">
+    <span (click)="scrollToElement(about)" [class.onscroll]="isScroll" class="navbar">
+      <div class="section">
+        <ul *ngFor="let content of contents">
+          <li>
+            <div *ngIf="content.status" id="active" (click)="test(content.id)" class="content-container">{{content.name}}</div>
+            <div *ngIf="!content.status" (click)="test(content.id)" class="content-container">{{content.name}}</div>
+            <div *ngIf="content.status" class="content-container-test"></div>
+          </li>
+        </ul>
+      </div>
+    </span>
+    <span class="section-logo">
+      <img height=350px; src="../../assets/logo.png">
+    </span>
+    <span class="muatrang-logo">
+      <img height=100px; src="../../assets/muatrang.png">
+    </span>
+  </div>
+</section>
+<section id="sec2" (wheel)="test2(1)">
+  <div class="container-main-MAIN">
+    <div class="slider">
+      hihi
+    </div>
+  </div>
+</section>
+<section id="sec3" (wheel)="test2(2)">
+  <div class="container-main">
+    <div class="slider">
+      hihi
+    </div>
+  </div>
+</section>
+<section id="sec4" #about (wheel)="test2(3)">
+  <div class="container-main">
+    <div class="slider">
+      hihi
+    </div>
+  </div>
+</section>

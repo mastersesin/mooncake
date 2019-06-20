@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+.app-container {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  border:0;
+  padding:0;
+  margin:0;
+  width: 100%;
+}

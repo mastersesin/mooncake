@@ -1,42 +1,68 @@
-<section id="sec1">
+<section id="sec0" #sec0>
   <div class="container">
-    <span (click)="scrollToElement(about)" [class.onscroll]="isScroll" class="navbar">
+    <span [class.onscroll]="isScroll" class="navbar">
       <div class="section">
         <ul *ngFor="let content of contents">
           <li>
-            <div *ngIf="content.status" id="active" (click)="test(content.id)" class="content-container">{{content.name}}</div>
-            <div *ngIf="!content.status" (click)="test(content.id)" class="content-container">{{content.name}}</div>
-            <div *ngIf="content.status" class="content-container-test"></div>
+            <div *ngIf="content.status" (click)="scrollToElement(content.section)" id="active" (click)="test(content.id)" class="content-container">{{content.name}}</div>
+            <div *ngIf="!content.status" (click)="scrollToElement(content.section)" (click)="test(content.id)" class="content-container">{{content.name}}</div>
+            <div *ngIf="content.status" (click)="scrollToElement(content.section)" class="content-container-test"></div>
           </li>
         </ul>
       </div>
     </span>
-    <span class="section-logo">
-      <img height=350px; src="../../assets/logo.png">
-    </span>
-    <span class="muatrang-logo">
-      <img height=100px; src="../../assets/muatrang.png">
-    </span>
+    <div class="section-logo-container">
+      <div class="section-logo">
+      </div>
+    </div>
   </div>
 </section>
-<section id="sec2" (wheel)="test2(1)">
+<section id="sec1" (wheel)="test2(1)" #sec1>
   <div class="container-main-MAIN">
-    <div class="slider">
-      hihi
+      <div style="height: 600px; z-index: 0;" class="slider">
+        <ngx-slick style="height: 600px;z-index: 0;" class="carousel" #slickModal="slick-modal" [config]="slideConfig" (afterChange)="afterChange($event)">
+          <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+            <img height=600px style='z-index: 0;' src="{{ slide.img }}" alt="" width="100%">
+          </div>
+        </ngx-slick>
+    </div>
+  </div>
+  <div class="slider-info">
+    <div class="slider-container">
+        <div class="flower-left"></div>
+        <div class="info-center">
+          <div class='top'>
+            <span *ngFor="let slide of slides">
+              <div [class.active]='slide.active' class='lightimg'></div>
+            </span>
+          </div>
+          <div class='bottom'>
+            BÁNH TRUNG THU 2019
+          </div>
+        </div>
+        <div class="flower-right"></div>
+    </div>
+  </div>
+  <div class='slider-info'>
+    <div style='max-width: 1000px;font-family: "MyWebFont", Fallback, sans-serif;font-weight: 600;'>
+      Tết trung thu lại về trên khắp mọi nẻo đường nơi phố thị.
+      Hòa cùng không khí hân hoan đón Tết, Hoàng Yến Group tự hào góp phần lưu giữ những
+      giá trị truyền thống, mang đến cho Quý khách hàng những món quà ý nghĩa để dành tặng
+      những người thân thương. Với mong muốn mỗi chiếc bánh là một cầu nối gửi gắm mối thân tình,
+      những đầu bếp lâu năm đã lựa chọn kĩ lưỡng từ khâu nguyên liệu cho đến tỉ mỉ trong cách tạo hình
+      nhằm đảm bảo chất lượng tinh tế và tuyệt vời nhất.
     </div>
   </div>
 </section>
-<section id="sec3" (wheel)="test2(2)">
+<section id="sec2" (wheel)="test2(2)" #sec2>
   <div class="container-main">
     <div class="slider">
       hihi
     </div>
   </div>
 </section>
-<section id="sec4" #about (wheel)="test2(3)">
+<section id="sec3" (wheel)="test2(3)" #sec3>
   <div class="container-main">
-    <div class="slider">
-      hihi
-    </div>
+    hihi
   </div>
 </section>

@@ -13,3 +13,7 @@
   font-family: 'webfont';
   src: url('assets/VL-SOFIAPROSOFT-LIGHT.OTF');
 }
+
+*{
+  box-sizing: border-box;
+}

@@ -19,7 +19,7 @@
 </section>
 <section id="sec1" (wheel)="test2(1)" #sec1>
   <div class="container-main-MAIN">
-      <div style="height: 600px; z-index: 0;" class="slider">
+      <div style="height: fit-content; z-index: 0;" class="slider">
         <ngx-slick style="height: 600px;z-index: 0;" class="carousel" #slickModal="slick-modal" [config]="slideConfig" (afterChange)="afterChange($event)">
           <div ngxSlickItem *ngFor="let slide of slides" class="slide">
             <img height=600px style='z-index: 0;' src="{{ slide.img }}" alt="" width="100%">
@@ -44,7 +44,7 @@
     </div>
   </div>
   <div class='slider-info'>
-    <div style='max-width: 1000px;font-family: "MyWebFont", Fallback, sans-serif;font-weight: 600;'>
+    <div style='color:white; max-width: 1000px;font-family: "webfont", Fallback, sans-serif;font-weight: 500;font-size: 18px;'>
       Tết trung thu lại về trên khắp mọi nẻo đường nơi phố thị.
       Hòa cùng không khí hân hoan đón Tết, Hoàng Yến Group tự hào góp phần lưu giữ những
       giá trị truyền thống, mang đến cho Quý khách hàng những món quà ý nghĩa để dành tặng
@@ -53,16 +53,345 @@
       nhằm đảm bảo chất lượng tinh tế và tuyệt vời nhất.
     </div>
   </div>
-</section>
-<section id="sec2" (wheel)="test2(2)" #sec2>
-  <div class="container-main">
-    <div class="slider">
-      hihi
+  <div class='slider-info'>
+    <div style='width: 100%;display:flex;max-width: 1000px;margin-top: 10px;'>
+      <div class='imgcontainer'>
+        <div style='height: 100%'>
+          <img width=100% height=100% src='../../assets/hinhrong.png'>
+        </div>
+      </div>
+      <div class='imgcontainer-side'>
+        <div class="Aligner-item">
+            Với hy vọng mỗi hộp bánh trao đi sẽ là một thông điệp ấm áp,
+             bánh Trung thu Hoàng Yến 2019 bao gồm Hải Yến, Nguyệt Yến,
+            Dạ Yến đa dạng về mẫu mã và hương vị được gửi đến những
+            người thân yêu nhất là món quà mang đậm dấu ấn Mùa
+            Trăng Sum Vầy.
+        </div>
+      </div>
     </div>
   </div>
 </section>
 <section id="sec3" (wheel)="test2(3)" #sec3>
   <div class="container-main">
-    hihi
+    <div class="chitietbanh">
+      <div class="hopbanhvagiatien">
+        <div class="hopbanh">
+          <img width=100% src='../../assets/hop_HY.png'>
+        </div>
+        <div class="giatien">
+          <img width=40% src='../../assets/gia_HY.png'>
+        </div>
+      </div>
+      <div class="tenvachitietbanh">
+        <div class="bonghoavaten">
+          <div class="bonghoa">
+            <img src='../../assets/canhbong.png' height=80px>
+          </div>
+          <div class="ten">
+            HẢI YẾN
+          </div>
+        </div>
+        <div class="chitiet">
+            Hải Yến tượng trưng cho cánh chim tự do giữa biển khơi
+             trong mình khát vọng khám phá vùng đất mới.
+             Trên con đường hướng đến thành công tuy không
+             tránh khỏi những lúc gặp khó khăn nhưng ai cũng
+             sẽ gặp được vị quý nhân của riêng mình. Hải Yến là
+              lời cảm ơn chân thành, lời hứa hẹn kề vai sát cánh
+               nhẹ nhàng mà tình cảm.
+        </div>
+        <div class="vibanh">
+          <table>
+            <tr>
+              <td><span><img height=16px src='../../assets/iconlongden.png'></span> THẬP CẨM GÀ QUAY</td>
+              <td><span><img height=16px src='../../assets/iconlongden.png'></span> ĐẬU ĐỎ PHÔ MAI</td>
+            </tr>
+            <tr>
+              <td><span><img height=16px src='../../assets/iconlongden.png'></span> NGŨ CỐC YẾN MẠCH</td>
+              <td><span><img height=16px src='../../assets/iconlongden.png'></span> ĐẬU XANH</td>
+            </tr>
+            <tr>
+              <td><span><img height=16px src='../../assets/iconlongden.png'></span> HẠT SEN TRÀ XANH</td>
+              <td style='color: yellow;font-size: 15px'> * Tùy chọn 4 trong 5 vị bánh </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="chitietbanh">
+      <div class="tenvachitietbanh">
+        <div class="bonghoavaten">
+          <div class="bonghoa">
+            <img src='../../assets/canhbong.png' height=80px>
+          </div>
+          <div class="ten">
+            NGUYỆT YẾN
+          </div>
+        </div>
+        <div class="chitiet">
+            Nguyệt Yến tỏa sáng như ánh trăng rằm
+             trên bầu trời đêm trong vắt. Cảnh tượng
+              thanh bình, đẹp rực rỡ tượng trưng cho
+               lời chúc may mắn, thịnh vượng dành cho
+                đối tác và người thân. Nguyệt Yến là
+                niềm tin và hy vọng rằng những dự định
+                 sắp tới sẽ được hoàn thành viên mãn.
+        </div>
+        <div class="vibanh">
+          <table>
+            <tr>
+              <td><span><img height=16px src='../../assets/iconlongden.png'></span> THẬP CẨM GÀ QUAY</td>
+              <td><span><img height=16px src='../../assets/iconlongden.png'></span> ĐẬU ĐỎ PHÔ MAI</td>
+            </tr>
+            <tr>
+              <td><span><img height=16px src='../../assets/iconlongden.png'></span> NGŨ CỐC YẾN MẠCH</td>
+              <td><span><img height=16px src='../../assets/iconlongden.png'></span> ĐẬU XANH</td>
+            </tr>
+            <tr>
+              <td><span><img height=16px src='../../assets/iconlongden.png'></span> HẠT SEN TRÀ XANH</td>
+              <td style='color: yellow;font-size: 15px'> * Tùy chọn 4 trong 5 vị bánh </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="hopbanhvagiatien">
+        <div class="hopbanh">
+          <img width=100% src='../../assets/hop_NY.png'>
+        </div>
+        <div class="giatien">
+          <img width=40% src='../../assets/gia_NY.png'>
+        </div>
+      </div>
+    </div>
+    <div class="chitietbanh">
+      <div class="hopbanhvagiatien" style='flex:3'>
+        <div class="hopbanh">
+          <img width=70% src='../../assets/hop_DY.png'>
+        </div>
+      </div>
+      <div class="tenvachitietbanh" id='special'>
+        <div class="bonghoavaten">
+          <div class="bonghoa">
+            <img src='../../assets/canhbong.png' height=80px>
+          </div>
+          <div class="ten">
+            DẠ YẾN
+          </div>
+        </div>
+        <div class="chitiet">
+            Dạ Yến nổi bật với hình ảnh cánh chim tung bay,
+            nhảy múa như hình tượng những vũ công trong đêm tiệc.
+             Dạ Yến là một món quà quý giá được trao gửi đến tay
+              đối tác và những người thân yêu như lời chúc
+              đoàn viên ý nghĩa nhất trong dịp
+              Trung Thu.
+        </div>
+        <div class='giady'>
+          <img width=40% src='../../assets/gia_DY.png'>
+        </div>
+        <div class="vibanh">
+          <table>
+            <tr>
+              <td><span><img height=16px src='../../assets/iconlongden.png'></span> THẬP CẨM GÀ QUAY</td>
+              <td><span><img height=16px src='../../assets/iconlongden.png'></span> ĐẬU ĐỎ PHÔ MAI</td>
+            </tr>
+            <tr>
+              <td><span><img height=16px src='../../assets/iconlongden.png'></span> NGŨ CỐC YẾN MẠCH</td>
+              <td><span><img height=16px src='../../assets/iconlongden.png'></span> ĐẬU XANH</td>
+            </tr>
+            <tr>
+              <td><span><img height=16px src='../../assets/iconlongden.png'></span> HẠT SEN TRÀ XANH</td>
+              <td style='color: yellow;font-size: 15px'> * Tùy chọn 4 trong 5 vị bánh </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="sec4" (wheel)="test2(4)" #sec4>
+  <div class="container-main">
+    <div class="chinhsach">
+      hihi
+    </div>
+    <div class="cacvicuabanh">
+      <div class="hangmot">
+        <div class="chitietvibanh">
+          <div class="hinhbanh1"></div>
+          <div class="tenbanh">Thập cẩm gà quay</div>
+        </div>
+        <div class="chitietvibanh">
+          <div class="hinhbanh2">
+          </div>
+          <div class="tenbanh">Ngũ cốc yến mạch</div>
+        </div>
+        <div class="chitietvibanh">
+          <div class="hinhbanh3">
+          </div>
+          <div class="tenbanh">Hạt sen trà xanh</div>
+        </div>
+      </div>
+      <div class="hanghai">
+        <div class="chitietvibanh">
+          <div class="hinhbanh1"></div>
+          <div class="tenbanh">Thập cẩm gà quay</div>
+        </div>
+        <div class="chitietvibanh">
+          <div class="hinhbanh2">
+          </div>
+          <div class="tenbanh">Ngũ cốc yến mạch</div>
+        </div>
+        <div class="chitietvibanh">
+          <div class="hinhbanh3">
+          </div>
+          <div class="tenbanh">Hạt sen trà xanh</div>
+        </div>
+      </div>
+      <div class="hangba">
+        <div class="chitietvibanh">
+          <div class="hinhbanh1"></div>
+          <div class="tenbanh">Thập cẩm gà quay</div>
+        </div>
+        <div class="chitietvibanh">
+          <div class="hinhbanh2">
+          </div>
+          <div class="tenbanh">Ngũ cốc yến mạch</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="sec5" (wheel)="test2(5)" #sec5>
+  <div class="container-main">
+    <div class="bangchinhsachuudai">
+      <div class="title">
+        CHÍNH SÁCH ƯU ĐÃI CHO KHÁCH HÀNG MUA SỐ LƯỢNG LỚN
+      </div>
+      <div class="pricetable">
+        <div class="rowcontainer">
+          <div class="rowcontainer columnsmall">
+            <div class="border start needmargin needborder">
+
+            </div>
+            <div class="border start needmargin needborder">
+              SỐ LƯỢNG <BR> HỘP
+            </div>
+            <div class="border start max">
+              <p style="line-height: 150%">
+                10 - 20<BR>
+                21 - 50<BR>
+                51 - 80<BR>
+                81 - 160<BR>
+                >160
+              </p>
+            </div>
+          </div>
+          <div class="rowcontainer columnbig">
+            <div class="border start">
+              HỘP 465K
+            </div>
+            <div class="border start">
+              <div class="border start">
+                THÀNH TIỀN <br> (TRIỆU VNĐ)
+              </div>
+              <div class="border start">
+                CHIẾT<BR>KHẤU
+              </div>
+            </div>
+            <div class="border start max">
+              <div class="border start max">
+                <p style="line-height: 150%">
+                  5 - 9<BR>
+                  10 - 23<BR>
+                  24 - 36<BR>
+                  37 - 72<BR>
+                  >72
+                </p>
+              </div>
+              <div class="border start max">
+                <p style="line-height: 150%">
+                  2%<BR>
+                  4%<BR>
+                  6%<BR>
+                  8%<BR>
+                  THỎA THUẬN
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="rowcontainer columnbig">
+            <div id="needmargin" class="border start">
+              HỘP 685K
+            </div>
+            <div class="border start">
+              <div class="border start">
+                THÀNH TIỀN <br> (TRIỆU VNĐ)
+              </div>
+              <div class="border start">
+                CHIẾT<BR>KHẤU
+              </div>
+            </div>
+            <div class="border start max">
+              <div class="border start max">
+                <p style="line-height: 150%">
+                  7 - 13<BR>
+                  14 - 33<BR>
+                  34 - 52<BR>
+                  53 - 104<BR>
+                  >104
+                </p>
+              </div>
+              <div class="border start max">
+                <p style="line-height: 150%">
+                  4%<BR>
+                  8%<BR>
+                  10%<BR>
+                  12%<BR>
+                  THỎA THUẬN
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="rowcontainer columnbig">
+            <div id="needmargin" class="border start">
+              HỘP 795K
+            </div>
+            <div class="border start">
+              <div class="border start">
+                THÀNH TIỀN <br> (TRIỆU VNĐ)
+              </div>
+              <div class="border start">
+                CHIẾT<BR>KHẤU
+              </div>
+            </div>
+            <div class="border start max">
+              <div class="border start max">
+                <p style="line-height: 150%">
+                  9 - 17<BR>
+                  18 - 43<BR>
+                  44 - 68<BR>
+                  69 - 136<BR>
+                  >136
+                </p>
+              </div>
+              <div class="border start max">
+                <p style="line-height: 150%">
+                  5%<BR>
+                  10%<BR>
+                  12%<BR>
+                  14%<BR>
+                  THỎA THUẬN
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bangchinhsachuudai-bottom">
+      <div class="bottomtest">
+        afwefwse</div>
+    </div>
   </div>
 </section>

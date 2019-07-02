@@ -9,11 +9,151 @@
   width: 100%;
 }
 
+.mat-form-field-appearance-legacy .mat-form-field-label {
+  color: white;
+}
+
+.mat-datepicker-toggle {
+  color:white;
+}
 @font-face {
   font-family: 'webfont';
   src: url('assets/VL-SOFIAPROSOFT-LIGHT.OTF');
 }
 
+@font-face {
+  font-family: 'webfontbold';
+  src: url('assets/VL-SOFIAPROSOFT-BOLD.OTF');
+}
+
 *{
   box-sizing: border-box;
+  font-family: "webfont", Fallback, sans-serif;
+  font-size: 20px;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@media only screen and (max-width: 600px) {
+  *{
+    box-sizing: border-box;
+    font-family: "webfont", Fallback, sans-serif;
+    font-size: 13px;
+  }
+  #sec1, #sec2, #sec3, #sec4{
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+  .navbar {
+    visibility: hidden;
+  }
+  .section-logo-container {
+    margin-top: 0 !important;
+  }
+  .slider {
+    border: 1px solid transparent;
+  }
+  .something {
+    font-family: "webfont", Fallback, sans-serif !important;
+    font-size: 16px !important;
+  }
+  .bottom {
+    font-size: 20px !important;
+    display: flex !important;
+    text-align: center !important;
+  }
+  .Aligner-item {
+    font-size: 16px !important;
+    padding:0 !important;
+    font-family: "webfont", Fallback, sans-serif !important;
+    line-height: 35px !important;
+  }
+  .somethinginfo {
+    display: block !important;
+  }
+  .slider-info.bigger {
+    height: fit-content !important;
+  }
+  .chitietbanh {
+    display: block !important;
+    align-content: center !important;
+  }
+  .hopbanhvagiatien {
+    margin: auto !important;
+  }
+  .tenvachitietbanh {
+    margin-top: 20px !important;
+  }
+  .cacvicuabanh {
+    margin: auto !important;
+  }
+  .hangmot {
+    display: inline !important;
+    margin: 0 auto !important;
+  }
+  .hinhbanh1 {
+    width: 100% !important;
+  }
+  .chitietvibanh {
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+  }
+  .hanghai {
+    display: inline !important;
+    margin: 0 auto !important;
+  }
+  .hangba {
+    display: inline !important;
+    margin: 0 auto !important;
+  }
+  #sec3 {
+    padding-bottom: 20px !important;
+  }
+  .title {
+    text-align: center !important;
+    font-size: 18px !important;
+  }
+  .pricing {
+    font-size: 11px !important;
+  }
+  #sec5 {
+    height: fit-content !important;
+  }
+  .luuy {
+    display: block !important;
+    align-content: center !important;
+    text-align: center !important;
+    margin-top: 20px !important;
+  }
+  .hinh {
+    margin: 0 !important;
+  }
+  .text {
+    width: 100% !important;
+    text-align: center !important;
+  }
+  .text p {
+    margin: 0 !important;
+  }
+  .chitiet {
+    padding: 0 !important;
+    font-size: 16px !important;
+    margin-top: 10px !important;
+  }
+  .vibanh {
+    padding: 0 !important;
+  }
+  .slider {
+    border-image: url(assets/framebig.png) 150 fill round !important;
+  }
+  .footer {
+    height: 10vh !important;
+  }
+  .giatien {
+    height: 40px !important;
+  }
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

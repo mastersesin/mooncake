@@ -1,4 +1,4 @@
-<section id="sec0" #sec0>
+<section id="sec1" (wheel)="test2(1)" #sec1>
   <div class="container">
     <span [class.onscroll]="isScroll" class="navbar">
       <div class="section">
@@ -16,13 +16,11 @@
       </div>
     </div>
   </div>
-</section>
-<section id="sec1" (wheel)="test2(1)" #sec1>
   <div class="container-main-MAIN">
       <div style="height: fit-content; z-index: 0;" class="slider">
-        <ngx-slick style="height: 600px;z-index: 0;" class="carousel" #slickModal="slick-modal" [config]="slideConfig" (afterChange)="afterChange($event)">
+        <ngx-slick class="carousel" #slickModal="slick-modal" [config]="slideConfig" (afterChange)="afterChange($event)">
           <div ngxSlickItem *ngFor="let slide of slides" class="slide">
-            <img height=600px style='z-index: 0;' src="{{ slide.img }}" alt="" width="100%">
+            <img class='slideimg' style='z-index: 0;' src="{{ slide.img }}" alt="" width="100%">
           </div>
         </ngx-slick>
     </div>
@@ -44,7 +42,7 @@
     </div>
   </div>
   <div class='slider-info'>
-    <div style='color:white; max-width: 1000px;font-family: "webfont", Fallback, sans-serif;font-weight: 500;font-size: 18px;'>
+    <div class='something'>
       Tết trung thu lại về trên khắp mọi nẻo đường nơi phố thị.
       Hòa cùng không khí hân hoan đón Tết, Hoàng Yến Group tự hào góp phần lưu giữ những
       giá trị truyền thống, mang đến cho Quý khách hàng những món quà ý nghĩa để dành tặng
@@ -53,11 +51,10 @@
       nhằm đảm bảo chất lượng tinh tế và tuyệt vời nhất.
     </div>
   </div>
-  <div class='slider-info'>
-    <div style='width: 100%;display:flex;max-width: 1000px;margin-top: 10px;'>
+  <div class='slider-info bigger'>
+    <div class='somethinginfo'>
       <div class='imgcontainer'>
-        <div style='height: 100%'>
-          <img width=100% height=100% src='../../assets/hinhrong.png'>
+        <div style='height: 100%;max-height: 300px;background-image: url("../../assets/hinhrong.png");background-size: cover;background-position: center;'>
         </div>
       </div>
       <div class='imgcontainer-side'>
@@ -72,14 +69,14 @@
     </div>
   </div>
 </section>
-<section id="sec3" (wheel)="test2(3)" #sec3>
+<section id="sec2" (wheel)="test2(2)" #sec2>
   <div class="container-main">
     <div class="chitietbanh">
       <div class="hopbanhvagiatien">
         <div class="hopbanh">
           <img width=100% src='../../assets/hop_HY.png'>
         </div>
-        <div class="giatien">
+        <div id='boxshadow' class="giatien">
           <img width=40% src='../../assets/gia_HY.png'>
         </div>
       </div>
@@ -120,6 +117,14 @@
       </div>
     </div>
     <div class="chitietbanh">
+      <div *ngIf="responsive" class="hopbanhvagiatien">
+        <div class="hopbanh">
+          <img width=100% src='../../assets/hop_NY.png'>
+        </div>
+        <div id='boxshadow' class="giatien topmargin">
+          <img width=40% src='../../assets/gia_NY.png'>
+        </div>
+      </div>
       <div class="tenvachitietbanh">
         <div class="bonghoavaten">
           <div class="bonghoa">
@@ -150,24 +155,30 @@
             </tr>
             <tr>
               <td><span><img height=16px src='../../assets/iconlongden.png'></span> HẠT SEN TRÀ XANH</td>
-              <td style='color: yellow;font-size: 15px'> * Tùy chọn 4 trong 5 vị bánh </td>
+              <td><span><img height=16px src='../../assets/iconlongden.png'></span> TIRAMISU</td>
             </tr>
           </table>
         </div>
       </div>
-      <div class="hopbanhvagiatien">
+      <div *ngIf="!responsive" class="hopbanhvagiatien">
         <div class="hopbanh">
           <img width=100% src='../../assets/hop_NY.png'>
         </div>
-        <div class="giatien">
+        <div id='boxshadow' class="giatien topmargin">
           <img width=40% src='../../assets/gia_NY.png'>
         </div>
       </div>
     </div>
     <div class="chitietbanh">
       <div class="hopbanhvagiatien" style='flex:3'>
-        <div class="hopbanh">
+        <div *ngIf="!responsive" class="hopbanh">
           <img width=70% src='../../assets/hop_DY.png'>
+        </div>
+        <div *ngIf="responsive" class="hopbanh">
+          <img width=100% src='../../assets/hop_DY.png'>
+        </div>
+        <div *ngIf="responsive" id='boxshadow' class="giatien topmargin">
+          <img width=40% src='../../assets/gia_DY.png'>
         </div>
       </div>
       <div class="tenvachitietbanh" id='special'>
@@ -187,8 +198,8 @@
               đoàn viên ý nghĩa nhất trong dịp
               Trung Thu.
         </div>
-        <div class='giady'>
-          <img width=40% src='../../assets/gia_DY.png'>
+        <div *ngIf="!responsive" id='boxshadow' class='giady'>
+            <img src='../../assets/gia_DY.png' height=40px>
         </div>
         <div class="vibanh">
           <table>
@@ -202,7 +213,7 @@
             </tr>
             <tr>
               <td><span><img height=16px src='../../assets/iconlongden.png'></span> HẠT SEN TRÀ XANH</td>
-              <td style='color: yellow;font-size: 15px'> * Tùy chọn 4 trong 5 vị bánh </td>
+              <td><span><img height=16px src='../../assets/iconlongden.png'></span> TIRAMISU</td>
             </tr>
           </table>
         </div>
@@ -210,10 +221,12 @@
     </div>
   </div>
 </section>
-<section id="sec4" (wheel)="test2(4)" #sec4>
+<section id="sec3" (wheel)="test2(3)" #sec3>
   <div class="container-main">
-    <div class="chinhsach">
-      hihi
+    <div class="chinhsachcontainer">
+      <div class="chinhsach">
+
+      </div>
     </div>
     <div class="cacvicuabanh">
       <div class="hangmot">
@@ -234,164 +247,203 @@
       </div>
       <div class="hanghai">
         <div class="chitietvibanh">
-          <div class="hinhbanh1"></div>
-          <div class="tenbanh">Thập cẩm gà quay</div>
+          <div class="hinhbanh4"></div>
+          <div class="tenbanh">Đậu đỏ phô mai</div>
         </div>
         <div class="chitietvibanh">
-          <div class="hinhbanh2">
+          <div class="hinhbanh5">
           </div>
-          <div class="tenbanh">Ngũ cốc yến mạch</div>
+          <div class="tenbanh">Đậu xanh</div>
         </div>
         <div class="chitietvibanh">
-          <div class="hinhbanh3">
+          <div class="hinhbanh6">
           </div>
-          <div class="tenbanh">Hạt sen trà xanh</div>
+          <div class="tenbanh">Tiramisu</div>
         </div>
       </div>
       <div class="hangba">
         <div class="chitietvibanh">
-          <div class="hinhbanh1"></div>
-          <div class="tenbanh">Thập cẩm gà quay</div>
+          <div class="hinhbanh7 buthemxiu"></div>
+          <div class="tenbanh">Gà quay vi cá</div>
         </div>
         <div class="chitietvibanh">
-          <div class="hinhbanh2">
+          <div class="hinhbanh8 buthemxiu">
           </div>
-          <div class="tenbanh">Ngũ cốc yến mạch</div>
+          <div class="tenbanh">Gà quay tỏi đen</div>
         </div>
       </div>
     </div>
   </div>
 </section>
-<section id="sec5" (wheel)="test2(5)" #sec5>
+<section id="sec4" (wheel)="test2(4)" #sec4>
   <div class="container-main">
     <div class="bangchinhsachuudai">
       <div class="title">
         CHÍNH SÁCH ƯU ĐÃI CHO KHÁCH HÀNG MUA SỐ LƯỢNG LỚN
       </div>
-      <div class="pricetable">
-        <div class="rowcontainer">
-          <div class="rowcontainer columnsmall">
-            <div class="border start needmargin needborder">
+      <table class="pricing">
+        <tr>
+          <th></th>
+          <th colspan="2">HỘP 465K</th>
+          <th colspan="2">HỘP 685K</th>
+          <th colspan="2">HỘP 795K</th>
+        </tr>
+        <tr>
+          <th style='color: #fad45a;'>SỐ LƯỢNG<br>HỘP</th>
+          <th style='color: #fad45a;'>THÀNH TIỀN<br>(TRIỆU VND)</th>
+          <th style='color: #fad45a;'>CHIẾT<br>KHẤU</th>
+          <th style='color: #fad45a;'>THÀNH TIỀN<br>(TRIỆU VND)</th>
+          <th style='color: #fad45a;'>CHIẾT<br>KHẤU</th>
+          <th style='color: #fad45a;'>THÀNH TIỀN<br>(TRIỆU VND)</th>
+          <th style='color: #fad45a;'>CHIẾT<br>KHẤU</th>
+        </tr>
+        <tr>
+          <td>
+            <p style="line-height: 150%">
+            10 - 20<BR>
+            21 - 50<BR>
+            51 - 80<BR>
+            81 - 160<BR>
+            >160
+            </p>
+          </td>
+          <td>
+            <p style="line-height: 150%">
+            5 - 9<BR>
+            9 - 23<BR>
+            23 - 36<BR>
+            36 - 72<BR>
+            >72
+            </p>
+          </td>
+          <td>
+            <p style="line-height: 150%">
+              2%<BR>
+              4%<BR>
+              6%<BR>
+              8%<BR>
+              THỎA THUẬN
+            </p>
+          </td>
+          <td>
+            <p style="line-height: 150%">
+              7 - 13<BR>
+              13 - 33<BR>
+              33 - 52<BR>
+              52 - 104<BR>
+              >104
+            </p>
+          </td>
+          <td>
+            <p style="line-height: 150%">
+              4%<BR>
+              8%<BR>
+              10%<BR>
+              12%<BR>
+              THỎA THUẬN
+            </p>
+          </td>
+          <td>
+            <p style="line-height: 150%">
+              9 - 17<BR>
+              18 - 43<BR>
+              43 - 68<BR>
+              68 - 136<BR>
+              >136
+            </p>
+          </td>
+          <td>
+            <p style="line-height: 150%">
+              5%<BR>
+              10%<BR>
+              12%<BR>
+              14%<BR>
+              THỎA THUẬN
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="7">
+            <BR>
+            KHÁCH HÀNG LÀ THÀNH VIÊN HOÀNG YẾN GROUP ĐƯỢC CHIẾT KHẤU THÊM<BR>
+            HẠNG VÀNG: +2%<BR>
+            HẠNG BẠC: +1%<BR>
+            <P></P>
+          </td>
+        </tr>
+      </table>
+      <div class='luuy'>
+        <div class='text'>
+          <p style='font-size: 20px;'>
+            LƯU Ý
+          </p>
+          <p style='margin-left: 20px;'>
+            Đối với những khách hàng đặt số lượng trên 160 hộp sẽ được
+            chiết khấu dựa trên thời gian chốt đơn hàng và đặt cọc như sau:
+          </p>
+          <p >
+            + Đơn hàng được chốt và đặt cọc trước 13/06/2019: +3%<br>
+            + Đơn hàng được chốt và đặt cọc trước 13/07/2019: +2%<br>
+            + Đơn hàng được chốt và đặt cọc trước 13/08/2019: +1%<br>
+          </p>
+        </div>
+        <div class='hinh'>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="sec5" (wheel)="test2(4)" #sec5>
+  <div class="container-main-sec5">
+    <div class="bangchinhsachuudai">
+      <div class='inbox'>
+        <div class='inboxform'>
+          <div class='formimg'>
 
-            </div>
-            <div class="border start needmargin needborder">
-              SỐ LƯỢNG <BR> HỘP
-            </div>
-            <div class="border start max">
-              <p style="line-height: 150%">
-                10 - 20<BR>
-                21 - 50<BR>
-                51 - 80<BR>
-                81 - 160<BR>
-                >160
-              </p>
-            </div>
           </div>
-          <div class="rowcontainer columnbig">
-            <div class="border start">
-              HỘP 465K
+          <div class='forminput'>
+            <div style='text-align: center;'>
+              <p style='font-size: 18px;color: rgb(236, 35, 35);'>{{apiMsg}}</p>
             </div>
-            <div class="border start">
-              <div class="border start">
-                THÀNH TIỀN <br> (TRIỆU VNĐ)
-              </div>
-              <div class="border start">
-                CHIẾT<BR>KHẤU
-              </div>
-            </div>
-            <div class="border start max">
-              <div class="border start max">
-                <p style="line-height: 150%">
-                  5 - 9<BR>
-                  10 - 23<BR>
-                  24 - 36<BR>
-                  37 - 72<BR>
-                  >72
-                </p>
-              </div>
-              <div class="border start max">
-                <p style="line-height: 150%">
-                  2%<BR>
-                  4%<BR>
-                  6%<BR>
-                  8%<BR>
-                  THỎA THUẬN
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="rowcontainer columnbig">
-            <div id="needmargin" class="border start">
-              HỘP 685K
-            </div>
-            <div class="border start">
-              <div class="border start">
-                THÀNH TIỀN <br> (TRIỆU VNĐ)
-              </div>
-              <div class="border start">
-                CHIẾT<BR>KHẤU
-              </div>
-            </div>
-            <div class="border start max">
-              <div class="border start max">
-                <p style="line-height: 150%">
-                  7 - 13<BR>
-                  14 - 33<BR>
-                  34 - 52<BR>
-                  53 - 104<BR>
-                  >104
-                </p>
-              </div>
-              <div class="border start max">
-                <p style="line-height: 150%">
-                  4%<BR>
-                  8%<BR>
-                  10%<BR>
-                  12%<BR>
-                  THỎA THUẬN
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="rowcontainer columnbig">
-            <div id="needmargin" class="border start">
-              HỘP 795K
-            </div>
-            <div class="border start">
-              <div class="border start">
-                THÀNH TIỀN <br> (TRIỆU VNĐ)
-              </div>
-              <div class="border start">
-                CHIẾT<BR>KHẤU
-              </div>
-            </div>
-            <div class="border start max">
-              <div class="border start max">
-                <p style="line-height: 150%">
-                  9 - 17<BR>
-                  18 - 43<BR>
-                  44 - 68<BR>
-                  69 - 136<BR>
-                  >136
-                </p>
-              </div>
-              <div class="border start max">
-                <p style="line-height: 150%">
-                  5%<BR>
-                  10%<BR>
-                  12%<BR>
-                  14%<BR>
-                  THỎA THUẬN
-                </p>
-              </div>
+            <mat-form-field class="input">
+              <input [(ngModel)]="hoten" matInput placeholder="Họ Tên" required>
+            </mat-form-field>
+            <mat-form-field class="input">
+              <input [(ngModel)]="congty" matInput placeholder="Công ty (nếu có)">
+            </mat-form-field>
+            <mat-form-field class="input half paddingright">
+              <input [(ngModel)]="email" matInput placeholder="Email" required>
+            </mat-form-field>
+            <mat-form-field class="input half">
+              <input [(ngModel)]="dienthoai" matInput placeholder="Điện thoại" required>
+            </mat-form-field>
+            <mat-form-field class="input">
+              <input [(ngModel)]="diachinhanbanh" matInput placeholder="Địa chỉ nhận bánh" required>
+            </mat-form-field>
+            <mat-form-field class="input half paddingright">
+              <input [(ngModel)]="soluonghop" matInput placeholder="Số lượng hộp" required>
+            </mat-form-field>
+            <mat-form-field class="input half">
+              <input [(ngModel)]="ngaycanbanh" matInput [matDatepicker]="picker" placeholder="Ngày cần bánh" required>
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field class="input">
+              <input [(ngModel)]="ghichukhac" matInput placeholder="Ghi chú khác">
+            </mat-form-field>
+            <div (click)="onSave()" class="submitwrapper">
+              <button style='background-color: transparent;border: none' class="submit" [disabled]="clicked">
+              </button>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="bangchinhsachuudai-bottom">
-      <div class="bottomtest">
-        afwefwse</div>
-    </div>
+  </div>
+</section>
+<section class="sec5">
+  <div class='imgfooter'></div>
+  <div class='footer'>
+
   </div>
 </section>
